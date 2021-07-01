@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All cars</title>
+</head>
+<body>
+
+<div th:each="car : ${cars}">
+    <a th:href="@{/cars/{id}(id=${car.getId()})}" th:text="${car.getName() + ', ' + car.getCarModel()}">user</a>
+</div>
+<br/>
+<hr/>
+<a href="/cars/new">Create new car</a>
+</body>
+</html>
